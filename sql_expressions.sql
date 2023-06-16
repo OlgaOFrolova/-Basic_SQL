@@ -30,7 +30,8 @@ SELECT
 Результат должен быть отсортирован по новому полю movie в порядке убывания. */
 
 SELECT
-      IF (rating >8, concat( release_year," ","-"," ", title ," ",'is'," ", 'Highly Rated'), concat(release_year," ","-"," ", title ," ",'is'," ", 'Low Rated')) AS movie    
+      IF (rating >8, concat( release_year," ","-"," ", title ," ",'is'," ", 'Highly Rated'), 
+          concat(release_year," ","-"," ", title ," ",'is'," ", 'Low Rated')) AS movie    
   FROM movies
  ORDER BY movie DESC;
  
