@@ -1,10 +1,10 @@
-/* Создайте таблицу movies с полями:
-id типа INT с ключом PRIMARY KEY AUTO_INCREMENT
-title типа VARCHAR(255) NOT NULL
-release_year типа INT
-genre типа VARCHAR(255)
-rating типа INT
-budget типа INT */
+/* РЎРѕР·РґР°Р№С‚Рµ С‚Р°Р±Р»РёС†Сѓ movies СЃ РїРѕР»СЏРјРё:
+id С‚РёРїР° INT СЃ РєР»СЋС‡РѕРј PRIMARY KEY AUTO_INCREMENT
+title С‚РёРїР° VARCHAR(255) NOT NULL
+release_year С‚РёРїР° INT
+genre С‚РёРїР° VARCHAR(255)
+rating С‚РёРїР° INT
+budget С‚РёРїР° INT  */
 
 
 CREATE TABLE movies (
@@ -16,26 +16,26 @@ CREATE TABLE movies (
     budget INT    
 );
 
-/* Создайте запрос который добавит три новые строки в таблицу movies */
+/* РЎРѕР·РґР°Р№С‚Рµ Р·Р°РїСЂРѕСЃ РєРѕС‚РѕСЂС‹Р№ РґРѕР±Р°РІРёС‚ С‚СЂРё РЅРѕРІС‹Рµ СЃС‚СЂРѕРєРё РІ С‚Р°Р±Р»РёС†Сѓ movies  */
 
 INSERT INTO movies (title, release_year, genre, rating, budget)
 VALUES ('Inception', 2010, 'Thriller', 8, 160000000),
        ('Pulp Fiction', 1994, 'Crime', 8, 31500000),
        ('Fight Club', 1999, 'Drama', 8, 63000000);
 
-/*Создайте запрос, который обновит значение в столбце rating для записи с заголовком "The Lion King" на 9 и значение в столбце budget на 50000000 */
+/*РЎРѕР·РґР°Р№С‚Рµ Р·Р°РїСЂРѕСЃ, РєРѕС‚РѕСЂС‹Р№ РѕР±РЅРѕРІРёС‚ Р·РЅР°С‡РµРЅРёРµ РІ СЃС‚РѕР»Р±С†Рµ rating РґР»СЏ Р·Р°РїРёСЃРё СЃ Р·Р°РіРѕР»РѕРІРєРѕРј "The Lion King" РЅР° 9 Рё Р·РЅР°С‡РµРЅРёРµ РІ СЃС‚РѕР»Р±С†Рµ budget РЅР° 50000000  */
 
 UPDATE movies
   SET rating = 9,
        budget = 50000000
  WHERE title = 'The Lion King';
 
-/*Создайте запрос, который удалит строки из таблицы movies, где значение колонки id равно 2, 4, 8.*/
+/*РЎРѕР·РґР°Р№С‚Рµ Р·Р°РїСЂРѕСЃ, РєРѕС‚РѕСЂС‹Р№ СѓРґР°Р»РёС‚ СЃС‚СЂРѕРєРё РёР· С‚Р°Р±Р»РёС†С‹ movies, РіРґРµ Р·РЅР°С‡РµРЅРёРµ РєРѕР»РѕРЅРєРё id СЂР°РІРЅРѕ 2, 4, 8*/
 
 DELETE FROM movies
  WHERE id IN ( 2, 4, 8 );
 
-/*Создайте запрос, который удалит строки из таблицы movies, где значение колонки genre равно Drama или Crime.*/
+/*РЎРѕР·РґР°Р№С‚Рµ Р·Р°РїСЂРѕСЃ, РєРѕС‚РѕСЂС‹Р№ СѓРґР°Р»РёС‚ СЃС‚СЂРѕРєРё РёР· С‚Р°Р±Р»РёС†С‹ movies, РіРґРµ Р·РЅР°С‡РµРЅРёРµ РєРѕР»РѕРЅРєРё genre СЂР°РІРЅРѕ Drama РёР»Рё Crime*/
 
 DELETE FROM movies
  WHERE genre IN ( 'Drama','Crime');
