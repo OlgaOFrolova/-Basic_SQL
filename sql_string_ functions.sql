@@ -25,7 +25,8 @@ SELECT title
   FROM movies
  WHERE LENGTH(title)>15
 
-/*Создайте запрос, который вернет список всех фильмов из таблицы movies, в котором значение поля title приведено к такому виду, пример: the-shawshank-redemption и записывает обновленное значение поля title в новое поле slug результирующей таблицы. */
+/*Создайте запрос, который вернет список всех фильмов из таблицы movies, в котором значение поля title приведено к такому виду, 
+пример: the-shawshank-redemption и записывает обновленное значение поля title в новое поле slug результирующей таблицы. */
 
 SELECT LOWER(REPLACE(REPLACE(REPLACE(REPLACE(title,' ','-'),'.',''),',',''),':','')) AS slug
   FROM movies
